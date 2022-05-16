@@ -3,7 +3,8 @@ class RecipesController < ApplicationController
 
   # GET /recipes or /recipes.json
   def index
-    @recipes = Recipe.all
+    @user = current_user
+    @recipes = @user.recipes.all
   end
 
   # GET /recipes/1 or /recipes/1.json
@@ -11,7 +12,8 @@ class RecipesController < ApplicationController
 
   # GET /recipes/new
   def new
-    @recipe = Recipe.new
+    @user = current_user
+    @recipe = @user.recipes.new
   end
 
   # GET /recipes/1/edit
@@ -19,15 +21,17 @@ class RecipesController < ApplicationController
 
   # POST /recipes or /recipes.json
   def create
-    @recipe = Recipe.new(recipe_params)
-
+    @user = current_user
+    @recipe = @user.recipes.new(recipe_params)
     respond_to do |format|
-      if @recipe.save
-        format.html { redirect_to recipe_url(@recipe), notice: 'Recipe was successfully created.' }
-        format.json { render :show, status: :created, location: @recipe }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @recipe.errors, status: :unprocessable_entity }
+      format.html do
+        if @recipe.save
+          flash[:success] = 'Recipe created successfully'
+          redirect_to recipes_url
+        else
+          flash.now[:error] = 'Error: Recipe could not be created'
+          render :new
+        end
       end
     end
   end
@@ -47,10 +51,12 @@ class RecipesController < ApplicationController
 
   # DELETE /recipes/1 or /recipes/1.json
   def destroy
+    @user = current_user
+    @recipe = @user.recipes.find(params[:id])
     @recipe.destroy
 
     respond_to do |format|
-      format.html { redirect_to recipes_url, notice: 'Recipe was successfully destroyed.' }
+      format.html { redirect_to recipe_path, notice: 'Recipe was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,6 +70,6 @@ class RecipesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def recipe_params
-    params.fetch(:recipe, {})
+    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :public, :description)
   end
 end
