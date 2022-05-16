@@ -2,14 +2,108 @@
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
  * vendor/assets/stylesheets directory can be referenced here using a relative path.
  *
  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
  *= require_self
  */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-image: url('https://images.pexels.com/photos/1323712/pexels-photo-1323712.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+a {
+  text-decoration: none !important;
+  color: #9c27b0;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.contact {
+  padding: 4%;
+  height: 400px;
+}
+
+.col-md-3 {
+  background: #ff9b00;
+  padding: 4%;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.contact-info {
+  margin-top: 10%;
+}
+
+.contact-info img {
+  margin-bottom: 15%;
+}
+
+.contact-info h2 {
+  margin-bottom: 10%;
+}
+
+.col-md-9 {
+  background: #fff;
+  padding: 3%;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.contact-form label {
+  font-weight: 600;
+}
+
+.contact-form button {
+  background: #25274d;
+  color: #fff;
+  font-weight: 600;
+  width: 25%;
+}
+
+.contact-form button:focus {
+  box-shadow: none;
+}
+
+.recipe {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  align-items: center;
+  width: 85%;
+  margin: 20px auto 20px auto;
+  padding: 10px;
+  border-radius: 10px;
+  background: linear-gradient(to right, #eaeaea, #dbdbdb, #f2f2f2, #ada996);
+}
+
+.recipe h2 {
+  color: rgb(109, 101, 74);
+  font-weight: 500;
+}
+
+.recipe h2:hover {
+  color: rgb(37, 37, 35);
+}
+
+.recipe h3 {
+  color: rgb(109, 101, 74);
+  font-weight: 400;
+}

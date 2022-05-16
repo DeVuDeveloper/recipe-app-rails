@@ -1,14 +1,15 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Recipes</h1>
-
-<div id="recipes">
-  <% @recipes.each do |recipe| %>
-    <%= render recipe %>
-    <p>
-      <%= link_to "Show this recipe", recipe %>
-    </p>
+<section class="recipe-container">
+<div>
+ <% @recipes.each do |recipe| %>
+      <div class= "recipe">
+          <div>
+            <%= link_to recipe_path(recipe.id), remote: :true do %>
+            <h2><%= recipe.name %></h2>
+          <% end %>
+      </div>
+    <h3><%= recipe.description %></h3>
+  </div>
   <% end %>
+  </div>
 </div>
-
-<%= link_to "New recipe", new_recipe_path %>
+</section>
