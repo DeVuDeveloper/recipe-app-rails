@@ -1,15 +1,14 @@
 <section class="recipe-container">
 <div>
  <% @recipes.each do |recipe| %>
-      <div class= "recipe">
-          <div>
-            <%= link_to recipe_path(recipe.id), remote: :true do %>
-            <h2><%= recipe.name %></h2>
-          <% end %>
-      </div>
+  <div class= "recipe">
+    <div>
+      <%= link_to recipe_path(recipe.id), remote: :true do %>
+        <h2><%= recipe.name %></h2>
+      <% end %>
+    </div>
     <h3><%= recipe.description %></h3>
   </div>
   <% end %>
-  </div>
 </div>
 </section>

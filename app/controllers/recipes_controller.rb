@@ -5,10 +5,15 @@ class RecipesController < ApplicationController
   def index
     @user = current_user
     @recipes = @user.recipes.all
+    @foods = Food.all
   end
 
   # GET /recipes/1 or /recipes/1.json
-  def show; end
+  def show
+    @foods = Food.all
+    @recipe_food = RecipeFood.new
+    @recipe_foods = RecipeFood.all
+  end
 
   # GET /recipes/new
   def new
