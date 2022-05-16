@@ -107,3 +107,9 @@ a:-webkit-any-link {
   color: rgb(109, 101, 74);
   font-weight: 400;
 }
+
+.logo {
+  width: 50px;
+  height: 40px;
+  border-radius: 50%;
+}

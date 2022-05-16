@@ -20,7 +20,7 @@ class FoodsController < ApplicationController
   # POST /foods or /foods.json
   def create
     @food = Food.new(food_params)
-    @food.user_id=1;
+    @food.user_id = 1
     respond_to do |format|
       if @food.save
         format.html { redirect_to foods_url(@food), notice: 'Food was successfully created.' }
