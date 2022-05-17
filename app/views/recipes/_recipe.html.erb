@@ -33,8 +33,8 @@
         <tr>
           <th scope="row"><%= item.food.name %></th>
           <td><%= item.quantity %></td>
-          <td>$5</td>
-          <td>delete / modifiy</td>
+          <td>$<%= item.food.price*item.quantity %></td>
+          <td><%= button_to "DELETE", item, method: :delete, class: 'btn btn-danger' %></td>
         </tr>
         <% end %>
 

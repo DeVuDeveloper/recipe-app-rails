@@ -12,7 +12,7 @@ class RecipesController < ApplicationController
   def show
     @foods = Food.all
     @recipe_food = RecipeFood.new
-    @recipe_foods = RecipeFood.all
+    @recipe_foods = RecipeFood.where(:recipe_id => params[:id])
   end
 
   # GET /recipes/new
