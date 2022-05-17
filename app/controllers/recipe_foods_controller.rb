@@ -25,7 +25,7 @@ class RecipeFoodsController < ApplicationController
       format.html do
         if @recipe_food.save
           flash[:success] = 'Recipe created successfully'
-          redirect_back_or_to({ action: "show", id: params[:recipe_id] })
+          redirect_back_or_to({ action: 'show', id: params[:recipe_id] })
         else
           flash.now[:error] = 'Error: Recipe could not be created'
           render :new
@@ -52,7 +52,7 @@ class RecipeFoodsController < ApplicationController
     @recipe_food.destroy
 
     respond_to do |format|
-      format.html { redirect_back_or_to({ action: "show", id: params[:recipe_id] }) }
+      format.html { redirect_back_or_to({ action: 'show', id: params[:recipe_id] }) }
       format.json { head :no_content }
     end
   end
