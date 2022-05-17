@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
+
   get 'shopping/list'
+
+  resources :publics
+
   devise_scope :user do
     # Redirests signing out users back to sign-in
     get "users", to: "devise/sessions#new"
   end
   devise_for :users
-
   root 'recipes#index'
   get "/general_shopping_list", to: 'shopping#list'
 
