@@ -10,39 +10,52 @@
 </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand" href="#"><img  class=" logo" src="https://img.freepik.com/free-vector/best-recipes-logo-with-yellow-pan_23-2147492924.jpg" /></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-              <ul class="navbar-nav mx-auto">
-                <li class="nav-item">
-              <%= link_to 'Recipes', recipes_path, class: 'nav-link' %>
-                </li>
-              <li class="nav-item">
-                  <%= link_to 'Foods', foods_path, class: 'nav-link' %> 
-                </li>
-              </ul>
-                <div class="d-flex">
-                <div class="dropdown">
-              <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-              Adding items
-              </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li class="nav-item">
-                <%= link_to 'Add recipe', new_recipe_path, class: "dropdown-item" %>
-              </li>
-                <li class="nav-item"> 
-              <%= link_to 'Add Food', new_food_path, class: "dropdown-item" %>
-              </li>
-              </ul>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              
+                <div class="container">
+                    <a class="navbar-brand" href="#"><img  class=" logo" src="https://img.freepik.com/free-vector/best-recipes-logo-with-yellow-pan_23-2147492924.jpg" /></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <% if user_signed_in? %>
+                   <strong class="username"><i class="fa fa-user-o" style="font-size:18px"></i> <%= current_user.name %></strong>
+                    <% end %>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav mx-auto">
+                          <li class="nav-item">
+                             <%= link_to 'Recipes', recipes_path, class: 'nav-link' %>
+                          </li>
+
+                          <li class="nav-item">
+                            <%= link_to 'Foods', foods_path, class: 'nav-link' %>
+                          </li>
+                        </ul>
+                        <div class="d-flex">
+                            <div class="dropdown">
+                                <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Adding items
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <li class="nav-item">
+                                    <%= link_to 'Add recipe', new_recipe_path, class: "dropdown-item" %>
+                                   </li>
+                                    <li class="nav-item"> 
+                                      <%= link_to 'Add Food', new_food_path, class: "dropdown-item" %>
+                                    </li>
+                                </ul>
+                            </div>
+                            <% if user_signed_in? %>
+                            <%= button_to "Logout", destroy_user_session_path, method: :delete , class: "btn btn-light ms-3" %>
+                            <% else %>
+                            <%= button_to "Login", new_user_session_path, class: "btn btn-light ms-3" %>
+                            <%= link_to "Sign up", new_user_registration_path, class: "btn btn-light ms-3" %> 
+                            <% end %>
+                        </div>
+                    </div>
                 </div>
-              </div>
-          </div>
-      </div>
-    </nav>
+               
+            </nav>
+        </header>
   <% if notice %>
       <h6 class="alert alert-success text-center msg"><%= flash[:notice]%></h6>
     <% end %>
