@@ -1,5 +1,5 @@
 class PublicsController < ApplicationController
-  before_action :set_public, only: %i[show edit update destroy]
+  skip_before_action :authenticate_user!, only: %i[index]
 
   # GET /publics or /publics.json
   def index
