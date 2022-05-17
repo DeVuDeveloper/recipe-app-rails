@@ -1,1 +1,1 @@
-json.partial! "publics/public", public: @public
+json.partial! 'publics/public', public: @public

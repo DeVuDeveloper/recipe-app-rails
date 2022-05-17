@@ -1,1 +1,1 @@
-json.array! @publics, partial: "publics/public", as: :public
+json.array! @publics, partial: 'publics/public', as: :public

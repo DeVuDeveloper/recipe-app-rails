@@ -1,5 +1,5 @@
 class PublicsController < ApplicationController
-  before_action :set_public, only: %i[ show edit update destroy ]
+  before_action :set_public, only: %i[show edit update destroy]
 
   # GET /publics or /publics.json
   def index
@@ -7,8 +7,7 @@ class PublicsController < ApplicationController
   end
 
   # GET /publics/1 or /publics/1.json
-  def show
-  end
+  def show; end
 
   # GET /publics/new
   def new
@@ -16,8 +15,7 @@ class PublicsController < ApplicationController
   end
 
   # GET /publics/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /publics or /publics.json
   def create
@@ -25,7 +23,7 @@ class PublicsController < ApplicationController
 
     respond_to do |format|
       if @public.save
-        format.html { redirect_to public_url(@public), notice: "Public was successfully created." }
+        format.html { redirect_to public_url(@public), notice: 'Public was successfully created.' }
         format.json { render :show, status: :created, location: @public }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +36,7 @@ class PublicsController < ApplicationController
   def update
     respond_to do |format|
       if @public.update(public_params)
-        format.html { redirect_to public_url(@public), notice: "Public was successfully updated." }
+        format.html { redirect_to public_url(@public), notice: 'Public was successfully updated.' }
         format.json { render :show, status: :ok, location: @public }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +50,20 @@ class PublicsController < ApplicationController
     @public.destroy
 
     respond_to do |format|
-      format.html { redirect_to publics_url, notice: "Public was successfully destroyed." }
+      format.html { redirect_to publics_url, notice: 'Public was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_public
-      @public = Public.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def public_params
-      params.fetch(:public, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_public
+    @public = Public.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def public_params
+    params.fetch(:public, {})
+  end
 end
