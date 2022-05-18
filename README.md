@@ -5,6 +5,11 @@
 ## Live preview
   ## Netlify [link]()
 
+##  Video
+
+#### Quick review of project and  code.
+#### [video link](https://drive.google.com/file/d/16cPBUSR1QRhIY9MgrYBN_jzgyt7Q427W/view?usp=sharing)
+
 
 ## Screenshots
 ![Example screenshot](app/assets/images/screenshot.jpg)
