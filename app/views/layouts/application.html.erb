@@ -11,7 +11,7 @@
 
   <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-              
+
                 <div class="container">
                     <a class="navbar-brand" href="#"><img  class=" logo" src="https://img.freepik.com/free-vector/best-recipes-logo-with-yellow-pan_23-2147492924.jpg" /></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,13 +29,9 @@
                           <li class="nav-item">
                             <%= link_to 'Foods', foods_path, class: 'nav-link' %>
                           </li>
-                          
+
                           <li class="nav-item">
                             <%= link_to 'Public Recipes', publics_path, class: 'nav-link' %>
-                          </li>
-
-                            <li class="nav-item">
-                            <%= link_to 'Shoping List', shopping_list_path, class: 'nav-link' %>
                           </li>
                         </ul>
                         <div class="d-flex">
@@ -47,7 +43,7 @@
                                     <li class="nav-item">
                                     <%= link_to 'Add recipe', new_recipe_path, class: "dropdown-item" %>
                                    </li>
-                                    <li class="nav-item"> 
+                                    <li class="nav-item">
                                       <%= link_to 'Add Food', new_food_path, class: "dropdown-item" %>
                                     </li>
                                 </ul>
@@ -56,12 +52,12 @@
                             <%= button_to "Logout", destroy_user_session_path, method: :delete , class: "btn btn-light ms-3" %>
                             <% else %>
                             <%= button_to "Login", new_user_session_path, class: "btn btn-light ms-3" %>
-                            <%= link_to "Sign up", new_user_registration_path, class: "btn btn-light ms-3" %> 
+                            <%= link_to "Sign up", new_user_registration_path, class: "btn btn-light ms-3" %>
                             <% end %>
                         </div>
                     </div>
                 </div>
-               
+
             </nav>
         </header>
   <% if notice %>
