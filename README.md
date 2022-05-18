@@ -3,7 +3,7 @@
 # Recipe App - Rails
 
 ## Live preview
-  ## Netlify [link]()
+  ## Netlify [link](https://morning-beyond-92854.herokuapp.com/)
 
 ##  Video
 
