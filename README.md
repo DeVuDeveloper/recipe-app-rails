@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Recipe App 
+# Recipe App-rails
 
 ## Live preview
   ## Netlify [link](https://morning-beyond-92854.herokuapp.com/)
