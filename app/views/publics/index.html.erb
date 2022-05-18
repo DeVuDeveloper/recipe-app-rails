@@ -3,7 +3,9 @@
 <div>
  <% @recipes.each do |recipe| %>
    <div class= "recipe">
+   <%= link_to recipe_path(recipe.id), remote: :true do %>
       <h2><%= recipe.name%><br>by<br><%= recipe.user[:name] %></h2> 
+      <%end%>
       <h3>Total food Items: <%=Recipe.items(recipe.id)%></h3>
       <h3>Total Price: $<%=Recipe.total(recipe.id)%></h3>
   </div>
