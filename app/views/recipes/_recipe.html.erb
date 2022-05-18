@@ -36,7 +36,10 @@
           <th scope="row"><%= item.food.name %></th>
           <td><%= item.quantity %></td>
           <td>$<%= item.food.price*item.quantity %></td>
-          <td><%= button_to "DELETE", item, method: :delete, class: 'btn btn-danger' %></td>
+          <td class="d-flex">
+              <%= button_to "DELETE", item, method: :delete, class: 'btn btn-danger' %>
+              <button type="button " class="btn btn-secondary ms-5" disabled>Modify</button>
+          </td>
         </tr>
         <% end %>
 
