@@ -1,0 +1,31 @@
+<div class="m-5">
+  <%= form_with(model: food) do |form| %>
+    <div class="p-5">
+      <div class="form-group mb-4 w-50">
+        <%= form.text_field :name, placeholder: 'Food name', class: 'form-control' %>
+      </div>
+      <div class="form-group mb-4 w-50">
+        <%= form.text_field :measurement_unit, placeholder: 'Measurement Unit', class: 'form-control' %>
+      </div>
+      <div class="form-group mb-4 w-50">
+        <%= form.number_field :price, step: 0.01, placeholder: 'Measurement Unit Price', class: 'form-control' %>
+      </div>
+      <div>
+        <%= form.submit "Publish", class: "btn btn-success w-25" %>
+      </div>
+    </div>
+    <% if food.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(food.errors.count, "error") %> prohibited this food from being saved:</h2>
+
+        <ul>
+          <% food.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+
+  <% end %>
+</div>
