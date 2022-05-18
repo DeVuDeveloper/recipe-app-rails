@@ -3,22 +3,13 @@ class Ability
 
   def initialize(user)
     user ||= User.new
+
     if user.role == 'admin'
       can :manage, :all
     else
-      can :read, Recipe do |recipe|
-        recipe.user == user || recipe.public
-      end
+      can :manage, Food, user_id: user.id
+      can :manage, Recipe, user_id: user.id
     end
 
-    can [:update, :destroy], Recipe do |recipe|
-      recipe.user == user
-    end
-
-    can :read, Food
-    can :destroy, Food do |food|
-      food.user.id == user.id
-    end
-    can %i[create], :all
   end
 end

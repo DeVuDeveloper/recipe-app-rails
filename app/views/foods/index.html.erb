@@ -1,19 +1,8 @@
-<p style="color: green"><%= notice %></p>
 <div class="d-flex flex-column">
   <div class="m-5">
     <%= link_to "New food", new_food_path, class: 'btn btn-secondary float-end' %>
   </div>
   <div class="d-flex justify-content-center">
-    <div id="foods">
-      <% if false %>
-      <% @foods.each do |food| %>
-        <%= render food %>
-        <p>
-          <%= link_to "Show this food", food %>
-        </p>
-      <% end %>
-      <% end %>
-    </div>
     <table class="table w-75">
       <thead>
         <tr>
@@ -29,7 +18,9 @@
           <th scope="row"><%= food.name %></th>
           <td><%= food.measurement_unit %></td>
           <td>$<%= food.price %></td>
+          <%if can? :destroy, food %>
           <td><%= button_to "DELETE", food, method: :delete, class: 'btn btn-danger' %></td>
+          <% end %>
         </tr>
         <% end %>
       </tbody>
