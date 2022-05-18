@@ -37,6 +37,7 @@
           <td><%= item.quantity %></td>
           <td>$<%= item.food.price*item.quantity %></td>
           <td><%= button_to "DELETE", item, method: :delete, class: 'btn btn-danger' %></td>
+          <td><%= button_to "MODIFY", item, class: 'btn btn-primary', :disabled => true %></td>
         </tr>
         <% end %>
 
