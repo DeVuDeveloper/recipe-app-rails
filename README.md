@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Recipe App
+# Recipe App - Rails
 
 ## Live preview
   ## Netlify [link]()
