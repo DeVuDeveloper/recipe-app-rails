@@ -7,7 +7,7 @@
 
 
 ## Screenshots
-![Example screenshot]()
+![Example screenshot](app/assets/images/screenshot.jpg)
 
 ## Contents
 * [Home/Public Recipes](#home)
