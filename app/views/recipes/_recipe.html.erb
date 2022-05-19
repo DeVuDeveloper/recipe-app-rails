@@ -62,7 +62,7 @@
 
         <div class="d-flex justify-content-between">
           <%= form.hidden_field :recipe_id, :value => recipe.id %>
-          <%= form.select :food_id, @foods.all.collect {|p| [ p.name, p.id ] }, :prompt => 'Select One' %>
+          <%= form.select :food_id, current_user.foods.collect {|food| [food.name, food.id]}, :prompt => 'Select One' %>
           <div class="form-group w-25">
             <%= form.number_field :quantity, step: 1,min: 1, placeholder: 'Qty', class: 'form-control' %>
           </div>

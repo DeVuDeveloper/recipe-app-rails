@@ -1,31 +1,41 @@
-<div class="m-5">
-  <%= form_with(model: food) do |form| %>
-    <div class="p-5">
-      <div class="form-group mb-4 w-50">
-        <%= form.text_field :name, placeholder: 'Food name', class: 'form-control' %>
-      </div>
-      <div class="form-group mb-4 w-50">
-        <%= form.text_field :measurement_unit, placeholder: 'Measurement Unit', class: 'form-control' %>
-      </div>
-      <div class="form-group mb-4 w-50">
-        <%= form.number_field :price, step: 0.01, placeholder: 'Measurement Unit Price', class: 'form-control' %>
-      </div>
-      <div>
-        <%= form.submit "Publish", class: "btn btn-success w-25" %>
-      </div>
-    </div>
-    <% if food.errors.any? %>
-      <div style="color: red">
-        <h2><%= pluralize(food.errors.count, "error") %> prohibited this food from being saved:</h2>
-
-        <ul>
-          <% food.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-
-  <% end %>
+<div class="container contact">
+	<div class="row">
+		<div class="col-md-3">
+			<div class="contact-info">
+				<img class = "img-thumbnail" src="https://media-cldnry.s-nbcnews.com/image/upload/t_focal-758x379,f_auto,q_auto:best/rockcms/2022-03/plant-based-food-mc-220323-02-273c7b.jpg" alt="image" />
+				<h2>Add new Food</h2>
+				<h4>You shoud love to try it!</h4>
+			</div>
+		</div>
+		<div class="col-md-9">
+          <%= form_with model: @food do |f| %>
+      <div class="contact-form">
+				<div class="form-group">
+				  <%= f.label :name, class: "control-label col-sm-2" %> 
+				<div class="col-sm-10">          
+				  <%= f.text_field :name, class: "form-control", placeholder: "Food Name"%>
+				  </div>
+				</div>
+				<div class="form-group">
+				  <%= f.label :unit, class: "control-label col-sm-2" %>
+                <div class="col-sm-10">          
+				  <%= f.text_field :measurement_unit, class: "form-control" ,placeholder: 'Measurement Unit' %>
+				  </div>
+				</div>
+				<div class="form-group">
+			      <%= f.label :price, class: "control-label col-sm-2" %>
+				<div class="col-sm-10">
+				  <%= f.number_field :price, step: 0.01, placeholder: 'Measurement Unit Price', class: 'form-control'%>
+				</div>
+				</div>
+          <div class="form-group">        
+				  <div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-dark">Add Food</button>
+				  </div>
+                  <% end %>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+

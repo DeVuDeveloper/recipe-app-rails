@@ -83,20 +83,27 @@ a:-webkit-any-link {
 }
 
 .recipe {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   gap: 50px;
   align-items: center;
   width: 85%;
   margin: 20px auto 20px auto;
-  padding: 10px;
   border-radius: 10px;
   background: linear-gradient(to right, #eaeaea, #dbdbdb, #f2f2f2, #ada996);
+  padding: 0 50px;
 }
 
 .recipe h2 {
   color: rgb(109, 101, 74);
   font-weight: 500;
+  flex: 1;
+}
+
+.recipe2 h2 {
+  color: rgb(109, 101, 74);
+  font-weight: 500;
+  padding-left: 100px;
 }
 
 .recipe h2:hover {
@@ -104,6 +111,27 @@ a:-webkit-any-link {
 }
 
 .recipe h3 {
+  color: rgb(109, 101, 74);
+  font-weight: 400;
+  flex: 1;
+}
+
+.recipe2 {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+  width: 85%;
+  margin: 20px auto 20px auto;
+  border-radius: 10px;
+  background: linear-gradient(to right, #eaeaea, #dbdbdb, #f2f2f2, #ada996);
+}
+
+.recipe2 h2:hover {
+  color: rgb(37, 37, 35);
+}
+
+.recipe2 h3 {
   color: rgb(109, 101, 74);
   font-weight: 400;
 }
