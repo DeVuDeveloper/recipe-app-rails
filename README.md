@@ -3,7 +3,7 @@
 # Recipe App-rails-app
 
 ## Live preview
-  ## Heroku [link](https://recipe-dejan-dib.herokuapp.com/)
+  ## Heroku [link](https://recipe-dejan.herokuapp.com/)
 
 ##  Video
 
