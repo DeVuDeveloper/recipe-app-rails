@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Recipe App-rails
+# Recipe App-rails-app
 
 ## Live preview
   ## Heroku [link](https://recipe-dejan-dib.herokuapp.com/)
