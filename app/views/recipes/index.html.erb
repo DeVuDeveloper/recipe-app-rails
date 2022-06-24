@@ -1,19 +1,20 @@
 <section class="recipe-container">
-<div>
  <% @recipes.each do |recipe| %>
-      <div class= "recipe">
           <div class='recipe-flex'>
+            <div>
             <%= link_to recipe_path(recipe.id), remote: :true do %>
             <h2><%= recipe.name %></h2>
-          <% end %>
+             <% end %>
+            </div>
+         
+          <div class=recipe-description>
+           <h3><%= recipe.description %></h3>
+           </div>
+           <div>
           <%if can? :destroy, recipe %>
            <%= button_to "Delete", recipe_path(recipe.id), method: :delete, class: "btn btn-danger"%>
           <% end %>
-        </div>
-        <div>
-    <h3><%= recipe.description %></h3>
-    </div>
-  </div>
+          </div>
+          </div>
   <% end %>
-</div>
 </section>
