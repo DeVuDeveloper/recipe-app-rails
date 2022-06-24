@@ -99,6 +99,12 @@ a:-webkit-any-link {
   font-weight: 500;
 }
 
+.recipe-flex h3 {
+  color: rgb(109, 101, 74);
+  font-weight: 500;
+  font-size: 21px;
+}
+
 .recipe2-name {
   width: 100%;
   display: flex;
